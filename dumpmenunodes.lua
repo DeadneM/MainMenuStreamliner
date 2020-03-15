@@ -16,6 +16,8 @@ local entries = {
 	adv_video = true,
 	sound = true,
 	network_options = true,
+	adv_options = true,
+	user_interface_options= true
 }
 
 --//////////////////////////////////////////--
@@ -24,7 +26,7 @@ local entries = {
 
 local find = string.find
 local function IsEntryValidForDumping(entry)
-	return entry ~= nil and entry._parameters ~= nil and entry._parameters.name ~= nil and entry._parameters.name ~= "back"and entry._parameters.name ~= "quit" and find(entry._parameters.name, "trial_") == nil and find(entry._parameters.name, "dlc_") == nil
+	return entry ~= nil and entry._parameters ~= nil and entry._parameters.name ~= nil and entry._parameters.name ~= "back" and entry._parameters.name ~= "quit" and find(entry._parameters.name, "trial_") == nil and find(entry._parameters.name, "dlc_") == nil
 end
 
 -- These callbacks are blacklisted due to them being invalid or referencing objects that are not present at the time of execution
